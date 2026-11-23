@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/shifts/{date} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null && request.auth.uid == userId
+        && date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.keys().hasOnly(['type', 'updatedAt'])
+        && request.resource.data.type in ['early', 'late', 'holidaylate', 'off', null]
+        && request.resource.data.updatedAt is number;
+      allow delete: if false;
+    }
+  }
+}
