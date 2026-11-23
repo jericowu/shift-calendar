@@ -1,6 +1,6 @@
 
 window.FIREBASE_CONFIG = {
-  apiKey: "AIzaSyAh8bLChvA0cXQfI90HcdqwS2yqXTjE_qA",
+  apiKey: "AIzaSyAh8bLcHvA0cXQfI90HcdqwS2yqXTjE_qA",
   authDomain: "my-shift-calendar-44b7c.firebaseapp.com",
   projectId: "my-shift-calendar-44b7c",
   storageBucket: "my-shift-calendar-44b7c.firebasestorage.app",
